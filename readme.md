@@ -6,6 +6,30 @@ shim console.log to fix emoji space render issues across terminals.
 
 some emojis render incorrectly across different terminals due to character width inconsistencies. for example, the beaver emoji (`🦫`) may appear to "eat" the space after it in VS Code's terminal, while it renders correctly in other terminals.
 
+### before (without shim)
+
+```
+// vscode terminal - space after emoji is "eaten"
+console.log('🦫 beaver')
+→ 🦫beaver        ← space disappeared!
+
+// other terminals - renders correctly
+console.log('🦫 beaver')
+→ 🦫 beaver       ← space preserved
+```
+
+### after (with shim)
+
+```
+// vscode terminal - shim adds extra space to compensate
+console.log('🦫 beaver')
+→ 🦫 beaver       ← looks correct!
+
+// other terminals - no adjustment needed
+console.log('🦫 beaver')
+→ 🦫 beaver       ← still correct
+```
+
 ## solution
 
 this package provides a shim that automatically adjusts space after emojis based on the detected terminal. this ensures consistent visual output.
