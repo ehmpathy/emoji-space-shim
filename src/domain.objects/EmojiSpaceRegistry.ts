@@ -160,7 +160,151 @@ export const EMOJI_SPACE_REGISTRY: Record<
 
   // ═══════════════════════════════════════════════════════════════════════════
   // emojis with variation selectors - consume 1 extra space in both terminals
+  // these are text-default emojis that require FE0F for emoji presentation
+  // see: .agent/repo=.this/role=any/briefs/research.emoji-width-ubuntu.md
   // ═══════════════════════════════════════════════════════════════════════════
-  '🌩️': { vscode: 1, default: 1 }, // cloud with lightning
+
+  // weather
+  '☀️': { vscode: 1, default: 1 }, // sun
+  '☁️': { vscode: 1, default: 1 }, // cloud
   '⛈️': { vscode: 1, default: 1 }, // cloud with lightning and rain
+  '🌤️': { vscode: 1, default: 1 }, // sun behind small cloud
+  '🌥️': { vscode: 1, default: 1 }, // sun behind large cloud
+  '🌦️': { vscode: 1, default: 1 }, // sun behind rain cloud
+  '🌧️': { vscode: 1, default: 1 }, // cloud with rain
+  '🌨️': { vscode: 1, default: 1 }, // cloud with snow
+  '🌩️': { vscode: 1, default: 1 }, // cloud with lightning
+  '🌪️': { vscode: 1, default: 1 }, // tornado
+  '🌫️': { vscode: 1, default: 1 }, // fog
+  '🌬️': { vscode: 1, default: 1 }, // wind face
+
+  // misc symbols
+  '☂️': { vscode: 1, default: 1 }, // umbrella
+  '☃️': { vscode: 1, default: 1 }, // snowman
+  '☄️': { vscode: 1, default: 1 }, // comet
+  '☎️': { vscode: 1, default: 1 }, // telephone
+  '☑️': { vscode: 1, default: 1 }, // check box with check
+  '☘️': { vscode: 1, default: 1 }, // shamrock
+  '☝️': { vscode: 1, default: 1 }, // index up
+  '☠️': { vscode: 1, default: 1 }, // skull and crossbones
+  '☢️': { vscode: 1, default: 1 }, // radioactive
+  '☣️': { vscode: 1, default: 1 }, // biohazard
+  '☦️': { vscode: 1, default: 1 }, // orthodox cross
+  '☪️': { vscode: 1, default: 1 }, // star and crescent
+  '☮️': { vscode: 1, default: 1 }, // peace symbol
+  '☯️': { vscode: 1, default: 1 }, // yin yang
+  '☸️': { vscode: 1, default: 1 }, // wheel of dharma
+  '☹️': { vscode: 1, default: 1 }, // frown face
+  '☺️': { vscode: 1, default: 1 }, // smile face
+
+  // card suits
+  '♠️': { vscode: 1, default: 1 }, // spade suit
+  '♣️': { vscode: 1, default: 1 }, // club suit
+  '♥️': { vscode: 1, default: 1 }, // heart suit
+  '♦️': { vscode: 1, default: 1 }, // diamond suit
+  '♨️': { vscode: 1, default: 1 }, // hot springs
+  '♻️': { vscode: 1, default: 1 }, // recycle symbol
+
+  // tools and objects
+  '⚒️': { vscode: 1, default: 1 }, // hammer and pick
+  '⚔️': { vscode: 1, default: 1 }, // crossed swords
+  '⚖️': { vscode: 1, default: 1 }, // balance scale
+  '⚗️': { vscode: 1, default: 1 }, // alembic
+  '⚙️': { vscode: 1, default: 1 }, // gear
+  '⚛️': { vscode: 1, default: 1 }, // atom symbol
+  '⚜️': { vscode: 1, default: 1 }, // fleur-de-lis
+  '⚠️': { vscode: 1, default: 1 }, // warn
+  '⚰️': { vscode: 1, default: 1 }, // coffin
+  '⚱️': { vscode: 1, default: 1 }, // funeral urn
+
+  // places and activities
+  '⛏️': { vscode: 1, default: 1 }, // pick
+  '⛑️': { vscode: 1, default: 1 }, // rescue worker helmet
+  '⛓️': { vscode: 1, default: 1 }, // chains
+  '⛩️': { vscode: 1, default: 1 }, // shinto shrine
+  '⛰️': { vscode: 1, default: 1 }, // mountain
+  '⛱️': { vscode: 1, default: 1 }, // umbrella on ground
+  '⛴️': { vscode: 1, default: 1 }, // ferry
+  '⛷️': { vscode: 1, default: 1 }, // skier
+  '⛸️': { vscode: 1, default: 1 }, // ice skate
+  '⛹️': { vscode: 1, default: 1 }, // person with ball
+
+  // arrows
+  '⬅️': { vscode: 1, default: 1 }, // left arrow
+  '⬆️': { vscode: 1, default: 1 }, // up arrow
+  '⬇️': { vscode: 1, default: 1 }, // down arrow
+  '➡️': { vscode: 1, default: 1 }, // right arrow
+  '↔️': { vscode: 1, default: 1 }, // left-right arrow
+  '↕️': { vscode: 1, default: 1 }, // up-down arrow
+  '↖️': { vscode: 1, default: 1 }, // up-left arrow
+  '↗️': { vscode: 1, default: 1 }, // up-right arrow
+  '↘️': { vscode: 1, default: 1 }, // down-right arrow
+  '↙️': { vscode: 1, default: 1 }, // down-left arrow
+  '↩️': { vscode: 1, default: 1 }, // right arrow curve left
+  '↪️': { vscode: 1, default: 1 }, // left arrow curve right
+
+  // time
+  '⏱️': { vscode: 1, default: 1 }, // stopwatch
+  '⏲️': { vscode: 1, default: 1 }, // timer clock
+
+  // hands and gestures
+  '✈️': { vscode: 1, default: 1 }, // airplane
+  '✉️': { vscode: 1, default: 1 }, // envelope
+  '✌️': { vscode: 1, default: 1 }, // victory hand
+  '✍️': { vscode: 1, default: 1 }, // hand that writes
+  '✏️': { vscode: 1, default: 1 }, // pencil
+  '✒️': { vscode: 1, default: 1 }, // black nib
+  '✔️': { vscode: 1, default: 1 }, // check mark
+  '✖️': { vscode: 1, default: 1 }, // multiply
+  '✝️': { vscode: 1, default: 1 }, // latin cross
+  '✡️': { vscode: 1, default: 1 }, // star of david
+
+  // marks and symbols
+  '❄️': { vscode: 1, default: 1 }, // snowflake
+  '❇️': { vscode: 1, default: 1 }, // sparkle
+  '❣️': { vscode: 1, default: 1 }, // heart exclamation
+  '❤️': { vscode: 1, default: 1 }, // red heart
+
+  // cjk and legal
+  '〰️': { vscode: 1, default: 1 }, // wavy dash
+  '〽️': { vscode: 1, default: 1 }, // part alternation mark
+  '㊗️': { vscode: 1, default: 1 }, // japanese congratulations
+  '㊙️': { vscode: 1, default: 1 }, // japanese secret
+  '©️': { vscode: 1, default: 1 }, // copyright
+  '®️': { vscode: 1, default: 1 }, // registered
+  '‼️': { vscode: 1, default: 1 }, // double exclamation
+  '⁉️': { vscode: 1, default: 1 }, // exclamation question
+  '™️': { vscode: 1, default: 1 }, // trade mark
+  ℹ️: { vscode: 1, default: 1 }, // information
+
+  // media controls
+  '⏭️': { vscode: 1, default: 1 }, // next track
+  '⏮️': { vscode: 1, default: 1 }, // last track
+  '⏯️': { vscode: 1, default: 1 }, // play or pause
+  '⏸️': { vscode: 1, default: 1 }, // pause
+  '⏹️': { vscode: 1, default: 1 }, // stop
+  '⏺️': { vscode: 1, default: 1 }, // record
+  '⏏️': { vscode: 1, default: 1 }, // eject
+  '▶️': { vscode: 1, default: 1 }, // play
+  '◀️': { vscode: 1, default: 1 }, // reverse
+
+  // squares
+  '◻️': { vscode: 1, default: 1 }, // white medium square
+  '◼️': { vscode: 1, default: 1 }, // black medium square
+  '▪️': { vscode: 1, default: 1 }, // black small square
+  '▫️': { vscode: 1, default: 1 }, // white small square
+
+  // keycaps
+  '#️⃣': { vscode: 1, default: 1 }, // keycap hash
+  '*️⃣': { vscode: 1, default: 1 }, // keycap asterisk
+  '0️⃣': { vscode: 1, default: 1 }, // keycap 0
+  '1️⃣': { vscode: 1, default: 1 }, // keycap 1
+  '2️⃣': { vscode: 1, default: 1 }, // keycap 2
+  '3️⃣': { vscode: 1, default: 1 }, // keycap 3
+  '4️⃣': { vscode: 1, default: 1 }, // keycap 4
+  '5️⃣': { vscode: 1, default: 1 }, // keycap 5
+  '6️⃣': { vscode: 1, default: 1 }, // keycap 6
+  '7️⃣': { vscode: 1, default: 1 }, // keycap 7
+  '8️⃣': { vscode: 1, default: 1 }, // keycap 8
+  '9️⃣': { vscode: 1, default: 1 }, // keycap 9
 };
