@@ -2,7 +2,7 @@
   "name": "emoji-space-shim",
   "author": "ehmpathy",
   "description": "shim console.log to fix emoji space render issues across terminals",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "repository": "ehmpathy/emoji-space-shim",
   "homepage": "https://github.com/ehmpathy/emoji-space-shim",
   "keywords": [
