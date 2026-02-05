@@ -277,6 +277,9 @@ export const EMOJI_SPACE_REGISTRY: Record<
   '™️': { vscode: 1, default: 1 }, // trade mark
   ℹ️: { vscode: 1, default: 1 }, // information
 
+  // media and audio
+  '🎙️': { vscode: 1, default: 1 }, // studio microphone
+
   // media controls
   '⏭️': { vscode: 1, default: 1 }, // next track
   '⏮️': { vscode: 1, default: 1 }, // last track
