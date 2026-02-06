@@ -18,6 +18,9 @@
 // ═══════════════════════════════════════════════════════════════════════════
 // candidate emojis: text-default presentation + variation selector
 // these are older unicode symbols that require FE0F for emoji presentation
+//
+// source: https://unicode.org/Public/16.0.0/ucd/emoji/emoji-variation-sequences.txt
+// filtered to: Emoji_Presentation=No (text-default) codepoints only
 // ═══════════════════════════════════════════════════════════════════════════
 
 const CANDIDATES_WITH_VS16 = [
@@ -26,6 +29,7 @@ const CANDIDATES_WITH_VS16 = [
   { emoji: '☁️', name: 'cloud', base: 'U+2601' },
   { emoji: '⛅', name: 'sun behind cloud', base: 'U+26C5' },
   { emoji: '⛈️', name: 'cloud with lightning and rain', base: 'U+26C8' },
+  { emoji: '🌡️', name: 'thermometer', base: 'U+1F321' },
   { emoji: '🌤️', name: 'sun behind small cloud', base: 'U+1F324' },
   { emoji: '🌥️', name: 'sun behind large cloud', base: 'U+1F325' },
   { emoji: '🌦️', name: 'sun behind rain cloud', base: 'U+1F326' },
@@ -54,6 +58,10 @@ const CANDIDATES_WITH_VS16 = [
   { emoji: '☸️', name: 'wheel of dharma', base: 'U+2638' },
   { emoji: '☹️', name: 'frown face', base: 'U+2639' },
   { emoji: '☺️', name: 'smile face', base: 'U+263A' },
+  { emoji: '♀️', name: 'female sign', base: 'U+2640' },
+  { emoji: '♂️', name: 'male sign', base: 'U+2642' },
+  { emoji: '♾️', name: 'infinity', base: 'U+267E' },
+  { emoji: '⚧️', name: 'transgender symbol', base: 'U+26A7' },
 
   // zodiac
   { emoji: '♈', name: 'aries', base: 'U+2648' },
@@ -74,11 +82,13 @@ const CANDIDATES_WITH_VS16 = [
   { emoji: '♣️', name: 'club suit', base: 'U+2663' },
   { emoji: '♥️', name: 'heart suit', base: 'U+2665' },
   { emoji: '♦️', name: 'diamond suit', base: 'U+2666' },
+  { emoji: '♟️', name: 'chess pawn', base: 'U+265F' },
   { emoji: '♨️', name: 'hot springs', base: 'U+2668' },
   { emoji: '♻️', name: 'recycle symbol', base: 'U+267B' },
   { emoji: '♿', name: 'wheelchair symbol', base: 'U+267F' },
 
   // misc symbols continued
+  { emoji: '⌨️', name: 'keyboard', base: 'U+2328' },
   { emoji: '⚒️', name: 'hammer and pick', base: 'U+2692' },
   { emoji: '⚓', name: 'anchor', base: 'U+2693' },
   { emoji: '⚔️', name: 'crossed swords', base: 'U+2694' },
@@ -114,6 +124,7 @@ const CANDIDATES_WITH_VS16 = [
   { emoji: '⛹️', name: 'person with ball', base: 'U+26F9' },
   { emoji: '⛺', name: 'tent', base: 'U+26FA' },
   { emoji: '⛽', name: 'fuel pump', base: 'U+26FD' },
+  { emoji: '✂️', name: 'scissors', base: 'U+2702' },
 
   // arrows and ui
   { emoji: '⬅️', name: 'left arrow', base: 'U+2B05' },
@@ -123,6 +134,8 @@ const CANDIDATES_WITH_VS16 = [
   { emoji: '⬜', name: 'white large square', base: 'U+2B1C' },
   { emoji: '⭐', name: 'star', base: 'U+2B50' },
   { emoji: '⭕', name: 'hollow red circle', base: 'U+2B55' },
+  { emoji: '⤴️', name: 'right arrow curve up', base: 'U+2934' },
+  { emoji: '⤵️', name: 'right arrow curve down', base: 'U+2935' },
 
   // time
   { emoji: '⌚', name: 'watch', base: 'U+231A' },
@@ -158,6 +171,8 @@ const CANDIDATES_WITH_VS16 = [
   { emoji: '❗', name: 'red exclamation mark', base: 'U+2757' },
   { emoji: '❣️', name: 'heart exclamation', base: 'U+2763' },
   { emoji: '❤️', name: 'red heart', base: 'U+2764' },
+  { emoji: '✳️', name: 'eight-spoked asterisk', base: 'U+2733' },
+  { emoji: '✴️', name: 'eight-pointed star', base: 'U+2734' },
 
   // arrows
   { emoji: '➡️', name: 'right arrow', base: 'U+27A1' },
@@ -169,6 +184,7 @@ const CANDIDATES_WITH_VS16 = [
   { emoji: '〽️', name: 'part alternation mark', base: 'U+303D' },
   { emoji: '㊗️', name: 'japanese congratulations', base: 'U+3297' },
   { emoji: '㊙️', name: 'japanese secret', base: 'U+3299' },
+  { emoji: 'Ⓜ️', name: 'circled M', base: 'U+24C2' },
 
   // more misc
   { emoji: '©️', name: 'copyright', base: 'U+00A9' },
@@ -225,6 +241,120 @@ const CANDIDATES_WITH_VS16 = [
   { emoji: '8️⃣', name: 'keycap 8', base: 'U+0038' },
   { emoji: '9️⃣', name: 'keycap 9', base: 'U+0039' },
   { emoji: '🔟', name: 'keycap 10', base: 'U+1F51F' },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // U+1Fxxx text-default emojis with fe0f variation selector
+  // these were added in unicode 7.0/8.0 with text-default presentation
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // food
+  { emoji: '🌶️', name: 'hot pepper', base: 'U+1F336' },
+  { emoji: '🍽️', name: 'fork and knife with plate', base: 'U+1F37D' },
+
+  // awards
+  { emoji: '🎖️', name: 'military medal', base: 'U+1F396' },
+  { emoji: '🎗️', name: 'reminder ribbon', base: 'U+1F397' },
+
+  // media and audio
+  { emoji: '🎙️', name: 'studio microphone', base: 'U+1F399' },
+  { emoji: '🎚️', name: 'level slider', base: 'U+1F39A' },
+  { emoji: '🎛️', name: 'control knobs', base: 'U+1F39B' },
+  { emoji: '🎞️', name: 'film frames', base: 'U+1F39E' },
+  { emoji: '🎟️', name: 'admission tickets', base: 'U+1F39F' },
+  { emoji: '📽️', name: 'film projector', base: 'U+1F4FD' },
+
+  // sports and vehicles
+  { emoji: '🏋️', name: 'person lifting weights', base: 'U+1F3CB' },
+  { emoji: '🏌️', name: 'person golfing', base: 'U+1F3CC' },
+  { emoji: '🏍️', name: 'motorcycle', base: 'U+1F3CD' },
+  { emoji: '🏎️', name: 'racing car', base: 'U+1F3CE' },
+
+  // places
+  { emoji: '🏔️', name: 'snow-capped mountain', base: 'U+1F3D4' },
+  { emoji: '🏕️', name: 'camping', base: 'U+1F3D5' },
+  { emoji: '🏖️', name: 'beach with umbrella', base: 'U+1F3D6' },
+  { emoji: '🏗️', name: 'building construction', base: 'U+1F3D7' },
+  { emoji: '🏘️', name: 'houses', base: 'U+1F3D8' },
+  { emoji: '🏙️', name: 'cityscape', base: 'U+1F3D9' },
+  { emoji: '🏚️', name: 'derelict house', base: 'U+1F3DA' },
+  { emoji: '🏛️', name: 'classical building', base: 'U+1F3DB' },
+  { emoji: '🏜️', name: 'desert', base: 'U+1F3DC' },
+  { emoji: '🏝️', name: 'desert island', base: 'U+1F3DD' },
+  { emoji: '🏞️', name: 'national park', base: 'U+1F3DE' },
+  { emoji: '🏟️', name: 'stadium', base: 'U+1F3DF' },
+
+  // flags and symbols
+  { emoji: '🏳️', name: 'white flag', base: 'U+1F3F3' },
+  { emoji: '🏵️', name: 'rosette', base: 'U+1F3F5' },
+  { emoji: '🏷️', name: 'label', base: 'U+1F3F7' },
+
+  // animals
+  { emoji: '🐿️', name: 'chipmunk', base: 'U+1F43F' },
+  { emoji: '👁️', name: 'eye', base: 'U+1F441' },
+
+  // religious and peace
+  { emoji: '🕉️', name: 'om', base: 'U+1F549' },
+  { emoji: '🕊️', name: 'dove', base: 'U+1F54A' },
+
+  // objects
+  { emoji: '🕯️', name: 'candle', base: 'U+1F56F' },
+  { emoji: '🕰️', name: 'mantelpiece clock', base: 'U+1F570' },
+  { emoji: '🕳️', name: 'hole', base: 'U+1F573' },
+  { emoji: '🕴️', name: 'person in suit levitating', base: 'U+1F574' },
+  { emoji: '🕵️', name: 'detective', base: 'U+1F575' },
+  { emoji: '🕶️', name: 'dark sunglasses', base: 'U+1F576' },
+  { emoji: '🕷️', name: 'spider', base: 'U+1F577' },
+  { emoji: '🕸️', name: 'spider web', base: 'U+1F578' },
+  { emoji: '🕹️', name: 'joystick', base: 'U+1F579' },
+
+  // writing tools
+  { emoji: '🖇️', name: 'linked paperclips', base: 'U+1F587' },
+  { emoji: '🖊️', name: 'pen', base: 'U+1F58A' },
+  { emoji: '🖋️', name: 'fountain pen', base: 'U+1F58B' },
+  { emoji: '🖌️', name: 'paintbrush', base: 'U+1F58C' },
+  { emoji: '🖍️', name: 'crayon', base: 'U+1F58D' },
+  { emoji: '🖐️', name: 'hand with fingers splayed', base: 'U+1F590' },
+
+  // computing
+  { emoji: '🖥️', name: 'desktop computer', base: 'U+1F5A5' },
+  { emoji: '🖨️', name: 'printer', base: 'U+1F5A8' },
+  { emoji: '🖱️', name: 'computer mouse', base: 'U+1F5B1' },
+  { emoji: '🖲️', name: 'trackball', base: 'U+1F5B2' },
+
+  // office and files
+  { emoji: '🖼️', name: 'framed picture', base: 'U+1F5BC' },
+  { emoji: '🗂️', name: 'card index dividers', base: 'U+1F5C2' },
+  { emoji: '🗃️', name: 'card file box', base: 'U+1F5C3' },
+  { emoji: '🗄️', name: 'file cabinet', base: 'U+1F5C4' },
+  { emoji: '🗑️', name: 'wastebasket', base: 'U+1F5D1' },
+  { emoji: '🗒️', name: 'spiral notepad', base: 'U+1F5D2' },
+  { emoji: '🗓️', name: 'spiral calendar', base: 'U+1F5D3' },
+  { emoji: '🗜️', name: 'clamp', base: 'U+1F5DC' },
+  { emoji: '🗝️', name: 'old key', base: 'U+1F5DD' },
+  { emoji: '🗞️', name: 'rolled-up newspaper', base: 'U+1F5DE' },
+  { emoji: '🗡️', name: 'dagger', base: 'U+1F5E1' },
+  { emoji: '🗣️', name: 'speaking head', base: 'U+1F5E3' },
+  { emoji: '🗨️', name: 'left speech bubble', base: 'U+1F5E8' },
+  { emoji: '🗯️', name: 'right anger bubble', base: 'U+1F5EF' },
+  { emoji: '🗳️', name: 'ballot box with ballot', base: 'U+1F5F3' },
+  { emoji: '🗺️', name: 'world map', base: 'U+1F5FA' },
+
+  // household
+  { emoji: '🛋️', name: 'couch and lamp', base: 'U+1F6CB' },
+  { emoji: '🛍️', name: 'shopping bags', base: 'U+1F6CD' },
+  { emoji: '🛎️', name: 'bellhop bell', base: 'U+1F6CE' },
+  { emoji: '🛏️', name: 'bed', base: 'U+1F6CF' },
+
+  // transport and tools
+  { emoji: '🛠️', name: 'hammer and wrench', base: 'U+1F6E0' },
+  { emoji: '🛡️', name: 'shield', base: 'U+1F6E1' },
+  { emoji: '🛢️', name: 'oil drum', base: 'U+1F6E2' },
+  { emoji: '🛣️', name: 'motorway', base: 'U+1F6E3' },
+  { emoji: '🛤️', name: 'railway track', base: 'U+1F6E4' },
+  { emoji: '🛥️', name: 'motor boat', base: 'U+1F6E5' },
+  { emoji: '🛩️', name: 'small airplane', base: 'U+1F6E9' },
+  { emoji: '🛰️', name: 'satellite', base: 'U+1F6F0' },
+  { emoji: '🛳️', name: 'passenger ship', base: 'U+1F6F3' },
 ];
 
 // ═══════════════════════════════════════════════════════════════════════════
