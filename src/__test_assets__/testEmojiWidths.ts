@@ -92,6 +92,7 @@ const CANDIDATES_WITH_VS16 = [
   { emoji: '⚒️', name: 'hammer and pick', base: 'U+2692' },
   { emoji: '⚓', name: 'anchor', base: 'U+2693' },
   { emoji: '⚔️', name: 'crossed swords', base: 'U+2694' },
+  { emoji: '⚕️', name: 'medical symbol', base: 'U+2695' },
   { emoji: '⚖️', name: 'balance scale', base: 'U+2696' },
   { emoji: '⚗️', name: 'alembic', base: 'U+2697' },
   { emoji: '⚙️', name: 'gear', base: 'U+2699' },
@@ -247,9 +248,30 @@ const CANDIDATES_WITH_VS16 = [
   // these were added in unicode 7.0/8.0 with text-default presentation
   // ═══════════════════════════════════════════════════════════════════════════
 
+  // blood type and japanese buttons
+  { emoji: '🅰️', name: 'A button (blood type)', base: 'U+1F170' },
+  { emoji: '🅱️', name: 'B button (blood type)', base: 'U+1F171' },
+  { emoji: '🅾️', name: 'O button (blood type)', base: 'U+1F17E' },
+  { emoji: '🅿️', name: 'P button', base: 'U+1F17F' },
+  { emoji: '🈂️', name: 'japanese service charge button', base: 'U+1F202' },
+  { emoji: '🈚️', name: 'japanese free of charge button', base: 'U+1F21A' },
+  { emoji: '🈯️', name: 'japanese reserved button', base: 'U+1F22F' },
+  { emoji: '🈷️', name: 'japanese monthly amount button', base: 'U+1F237' },
+
+  // globes and moons
+  { emoji: '🌍️', name: 'globe europe-africa', base: 'U+1F30D' },
+  { emoji: '🌎️', name: 'globe americas', base: 'U+1F30E' },
+  { emoji: '🌏️', name: 'globe asia-australia', base: 'U+1F30F' },
+  { emoji: '🌕️', name: 'full moon', base: 'U+1F315' },
+  { emoji: '🌜️', name: 'last quarter moon face', base: 'U+1F31C' },
+
   // food
   { emoji: '🌶️', name: 'hot pepper', base: 'U+1F336' },
   { emoji: '🍽️', name: 'fork and knife with plate', base: 'U+1F37D' },
+  { emoji: '🍸️', name: 'cocktail glass', base: 'U+1F378' },
+
+  // education
+  { emoji: '🎓️', name: 'graduation cap', base: 'U+1F393' },
 
   // awards
   { emoji: '🎖️', name: 'military medal', base: 'U+1F396' },
