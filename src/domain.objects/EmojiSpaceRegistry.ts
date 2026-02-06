@@ -218,6 +218,7 @@ export const EMOJI_SPACE_REGISTRY: Record<
   '⌨️': { vscode: 1, default: 1 }, // keyboard
   '⚒️': { vscode: 1, default: 1 }, // hammer and pick
   '⚔️': { vscode: 1, default: 1 }, // crossed swords
+  '⚕️': { vscode: 1, default: 1 }, // medical symbol
   '⚖️': { vscode: 1, default: 1 }, // balance scale
   '⚗️': { vscode: 1, default: 1 }, // alembic
   '⚙️': { vscode: 1, default: 1 }, // gear
@@ -293,6 +294,27 @@ export const EMOJI_SPACE_REGISTRY: Record<
   '⁉️': { vscode: 1, default: 1 }, // exclamation question
   '™️': { vscode: 1, default: 1 }, // trade mark
   ℹ️: { vscode: 1, default: 1 }, // information
+
+  // blood type and japanese buttons
+  '🅰️': { vscode: 1, default: 1 }, // A button (blood type)
+  '🅱️': { vscode: 1, default: 1 }, // B button (blood type)
+  '🅾️': { vscode: 1, default: 1 }, // O button (blood type)
+  '🅿️': { vscode: 1, default: 1 }, // P button
+  '🈂️': { vscode: 1, default: 1 }, // japanese service charge button
+  '🈚️': { vscode: 1, default: 1 }, // japanese free of charge button
+  '🈯️': { vscode: 1, default: 1 }, // japanese reserved button
+  '🈷️': { vscode: 1, default: 1 }, // japanese monthly amount button
+
+  // globes and moons
+  '🌍️': { vscode: 1, default: 1 }, // globe europe-africa
+  '🌎️': { vscode: 1, default: 1 }, // globe americas
+  '🌏️': { vscode: 1, default: 1 }, // globe asia-australia
+  '🌕️': { vscode: 1, default: 1 }, // full moon
+  '🌜️': { vscode: 1, default: 1 }, // last quarter moon face
+
+  // food and education
+  '🍸️': { vscode: 1, default: 1 }, // cocktail glass
+  '🎓️': { vscode: 1, default: 1 }, // graduation cap
 
   // media and audio
   '🎙️': { vscode: 1, default: 1 }, // studio microphone
